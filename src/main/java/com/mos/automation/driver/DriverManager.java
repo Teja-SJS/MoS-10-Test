@@ -7,11 +7,6 @@ import org.openqa.selenium.WebDriver;
  * DriverManager class manages the WebDriver instance using ThreadLocal.
  * This ensures thread safety for parallel test execution.
  *
- * Features:
- * - ThreadLocal driver management
- * - Thread-safe driver operations
- * - Support for parallel execution
- *
  * @author Senior Automation Architect
  * @version 1.0
  */

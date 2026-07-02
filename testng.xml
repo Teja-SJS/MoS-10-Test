@@ -4,13 +4,7 @@
     <test name="Chrome Tests">
         <parameter name="browser" value="chrome" />
         <classes>
-            <!-- Add test classes here -->
-        </classes>
-    </test>
-    <test name="Firefox Tests">
-        <parameter name="browser" value="firefox" />
-        <classes>
-            <!-- Add test classes here -->
+            <class name="com.mos.automation.tests.GoogleSearchTest" />
         </classes>
     </test>
 </suite>

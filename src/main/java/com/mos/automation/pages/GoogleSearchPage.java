@@ -8,31 +8,19 @@ import org.openqa.selenium.support.FindBy;
 
 /**
  * GoogleSearchPage class is a Page Object for Google Search application.
- * This is a sample page object demonstrating the POM design pattern.
- *
- * Locators:
- * - Search input field
- * - Search button
- * - Search results
  *
  * @author Senior Automation Architect
  * @version 1.0
  */
 public class GoogleSearchPage extends BasePage {
 
-    // Locators
     @FindBy(name = "q")
     private WebElement searchInputField;
-
-    @FindBy(name = "btnK")
-    private WebElement googleSearchButton;
 
     private By searchResults = By.xpath("//div[@id='search']//div[@class='g']");
 
     /**
      * Enters search text in search field.
-     *
-     * @param searchText Text to search
      */
     public void enterSearchText(String searchText) {
         try {
@@ -62,8 +50,6 @@ public class GoogleSearchPage extends BasePage {
 
     /**
      * Performs search with given text.
-     *
-     * @param searchText Text to search for
      */
     public void search(String searchText) {
         try {
@@ -73,22 +59,6 @@ public class GoogleSearchPage extends BasePage {
         } catch (Exception e) {
             LoggerManager.error("Search operation failed: " + e.getMessage(), e);
             throw e;
-        }
-    }
-
-    /**
-     * Gets number of search results.
-     *
-     * @return Count of search results
-     */
-    public int getSearchResultsCount() {
-        try {
-            int count = driver.findElements(searchResults).size();
-            LoggerManager.info("Search results count: " + count);
-            return count;
-        } catch (Exception e) {
-            LoggerManager.error("Failed to get search results count: " + e.getMessage(), e);
-            return 0;
         }
     }
 }

@@ -10,13 +10,6 @@ import java.time.Duration;
 /**
  * AlertUtility class provides methods to handle JavaScript alerts, confirmations, and prompts.
  *
- * Features:
- * - Wait for alert presence
- * - Accept alert
- * - Dismiss alert
- * - Send text to alert
- * - Get alert text
- *
  * @author Senior Automation Architect
  * @version 1.0
  */
@@ -27,8 +20,6 @@ public class AlertUtility {
 
     /**
      * Constructor to initialize AlertUtility with WebDriver.
-     *
-     * @param driver WebDriver instance
      */
     public AlertUtility(WebDriver driver) {
         this.driver = driver;
@@ -36,8 +27,6 @@ public class AlertUtility {
 
     /**
      * Waits for alert to be present.
-     *
-     * @return Alert object
      */
     public Alert waitForAlert() {
         return waitForAlert(DEFAULT_TIMEOUT);
@@ -45,9 +34,6 @@ public class AlertUtility {
 
     /**
      * Waits for alert to be present with custom timeout.
-     *
-     * @param timeoutInSeconds Custom timeout
-     * @return Alert object
      */
     public Alert waitForAlert(int timeoutInSeconds) {
         try {
@@ -91,8 +77,6 @@ public class AlertUtility {
 
     /**
      * Gets alert text.
-     *
-     * @return Alert message text
      */
     public String getAlertText() {
         try {
@@ -108,8 +92,6 @@ public class AlertUtility {
 
     /**
      * Sends text to prompt alert.
-     *
-     * @param text Text to send
      */
     public void sendTextToAlert(String text) {
         try {

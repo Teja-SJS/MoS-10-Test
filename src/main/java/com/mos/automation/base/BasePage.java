@@ -10,12 +10,6 @@ import org.openqa.selenium.support.PageFactory;
  * BasePage class contains common utilities and methods for all page classes.
  * All page objects should extend this class to access common functionalities.
  *
- * Features:
- * - Initialization of all utility classes
- * - Common wait operations
- * - Common element actions
- * - Logging support
- *
  * @author Senior Automation Architect
  * @version 1.0
  */
@@ -41,7 +35,7 @@ public class BasePage {
         this.actionUtility = new ActionUtility(driver);
         this.jsUtility = new JavaScriptUtility(driver);
         this.alertUtility = new AlertUtility(driver);
-        this.dropdownUtility = new DropdownUtility(driver);
+        this.dropdownUtility = new DropdownUtility(null);
         this.windowUtility = new WindowUtility(driver);
         this.frameUtility = new FrameUtility(driver);
         this.screenshotUtility = new ScreenshotUtility(driver);

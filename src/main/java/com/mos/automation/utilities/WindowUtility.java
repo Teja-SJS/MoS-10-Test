@@ -8,12 +8,6 @@ import java.util.List;
 /**
  * WindowUtility class provides methods to handle multiple windows/tabs.
  *
- * Features:
- * - Switch between windows/tabs
- * - Close specific window
- * - Get window handles
- * - Switch to parent window
- *
  * @author Senior Automation Architect
  * @version 1.0
  */
@@ -24,8 +18,6 @@ public class WindowUtility {
 
     /**
      * Constructor to initialize WindowUtility with WebDriver.
-     *
-     * @param driver WebDriver instance
      */
     public WindowUtility(WebDriver driver) {
         this.driver = driver;
@@ -65,8 +57,6 @@ public class WindowUtility {
 
     /**
      * Switches to window by title.
-     *
-     * @param windowTitle Title of the window
      */
     public void switchToWindowByTitle(String windowTitle) {
         try {
@@ -86,8 +76,6 @@ public class WindowUtility {
 
     /**
      * Gets all window handles.
-     *
-     * @return List of window handles
      */
     public List<String> getAllWindowHandles() {
         try {

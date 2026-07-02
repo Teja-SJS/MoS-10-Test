@@ -10,12 +10,6 @@ import java.time.Duration;
 
 /**
  * WaitUtility class provides explicit wait mechanisms for handling asynchronous operations.
- * Uses WebDriverWait with various expected conditions.
- *
- * Features:
- * - Explicit waits for element visibility, clickability, presence
- * - Custom timeout configuration
- * - Reduced flakiness in automation
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -27,8 +21,6 @@ public class WaitUtility {
 
     /**
      * Constructor to initialize WaitUtility with WebDriver.
-     *
-     * @param driver WebDriver instance
      */
     public WaitUtility(WebDriver driver) {
         this.driver = driver;
@@ -36,9 +28,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be visible.
-     *
-     * @param locator By locator of the element
-     * @return WebElement once visible
      */
     public WebElement waitForElementToBeVisible(By locator) {
         return waitForElementToBeVisible(locator, DEFAULT_TIMEOUT);
@@ -46,10 +35,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be visible with custom timeout.
-     *
-     * @param locator By locator of the element
-     * @param timeoutInSeconds Custom timeout
-     * @return WebElement once visible
      */
     public WebElement waitForElementToBeVisible(By locator, int timeoutInSeconds) {
         try {
@@ -65,9 +50,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be clickable.
-     *
-     * @param locator By locator of the element
-     * @return WebElement once clickable
      */
     public WebElement waitForElementToBeClickable(By locator) {
         return waitForElementToBeClickable(locator, DEFAULT_TIMEOUT);
@@ -75,10 +57,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be clickable with custom timeout.
-     *
-     * @param locator By locator of the element
-     * @param timeoutInSeconds Custom timeout
-     * @return WebElement once clickable
      */
     public WebElement waitForElementToBeClickable(By locator, int timeoutInSeconds) {
         try {
@@ -94,9 +72,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be present in DOM.
-     *
-     * @param locator By locator of the element
-     * @return WebElement once present
      */
     public WebElement waitForElementToBePresent(By locator) {
         return waitForElementToBePresent(locator, DEFAULT_TIMEOUT);
@@ -104,10 +79,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be present in DOM with custom timeout.
-     *
-     * @param locator By locator of the element
-     * @param timeoutInSeconds Custom timeout
-     * @return WebElement once present
      */
     public WebElement waitForElementToBePresent(By locator, int timeoutInSeconds) {
         try {
@@ -123,8 +94,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be invisible.
-     *
-     * @param locator By locator of the element
      */
     public void waitForElementToBeInvisible(By locator) {
         waitForElementToBeInvisible(locator, DEFAULT_TIMEOUT);
@@ -132,9 +101,6 @@ public class WaitUtility {
 
     /**
      * Waits for an element to be invisible with custom timeout.
-     *
-     * @param locator By locator of the element
-     * @param timeoutInSeconds Custom timeout
      */
     public void waitForElementToBeInvisible(By locator, int timeoutInSeconds) {
         try {

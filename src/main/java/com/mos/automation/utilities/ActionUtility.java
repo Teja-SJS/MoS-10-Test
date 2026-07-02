@@ -7,14 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 
 /**
  * ActionUtility class provides common action operations using Selenium Actions class.
- * Handles mouse and keyboard interactions.
- *
- * Features:
- * - Mouse hover
- * - Double click
- * - Right click
- * - Drag and drop
- * - Keyboard actions
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -26,8 +18,6 @@ public class ActionUtility {
 
     /**
      * Constructor to initialize ActionUtility with WebDriver.
-     *
-     * @param driver WebDriver instance
      */
     public ActionUtility(WebDriver driver) {
         this.driver = driver;
@@ -36,8 +26,6 @@ public class ActionUtility {
 
     /**
      * Performs hover action on an element.
-     *
-     * @param element WebElement to hover on
      */
     public void hoverOnElement(WebElement element) {
         try {
@@ -51,8 +39,6 @@ public class ActionUtility {
 
     /**
      * Performs double click action on an element.
-     *
-     * @param element WebElement to double click
      */
     public void doubleClick(WebElement element) {
         try {
@@ -66,8 +52,6 @@ public class ActionUtility {
 
     /**
      * Performs right click action on an element.
-     *
-     * @param element WebElement to right click
      */
     public void rightClick(WebElement element) {
         try {
@@ -81,9 +65,6 @@ public class ActionUtility {
 
     /**
      * Performs drag and drop action.
-     *
-     * @param sourceElement Element to drag
-     * @param targetElement Element to drop on
      */
     public void dragAndDrop(WebElement sourceElement, WebElement targetElement) {
         try {

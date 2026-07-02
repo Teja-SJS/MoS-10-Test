@@ -8,13 +8,6 @@ import java.io.FileOutputStream;
 
 /**
  * ExcelUtility class provides methods to read and write Excel files.
- * Supports .xlsx format using Apache POI.
- *
- * Features:
- * - Read data from Excel
- * - Write data to Excel
- * - Get row/column count
- * - Create new Excel file
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -27,9 +20,6 @@ public class ExcelUtility {
 
     /**
      * Constructor to load Excel file.
-     *
-     * @param filePath Path to Excel file
-     * @param sheetName Name of the sheet
      */
     public ExcelUtility(String filePath, String sheetName) {
         try {
@@ -46,10 +36,6 @@ public class ExcelUtility {
 
     /**
      * Gets data from Excel cell.
-     *
-     * @param rowNum Row number
-     * @param colNum Column number
-     * @return Cell value as String
      */
     public String getCellData(int rowNum, int colNum) {
         try {
@@ -66,10 +52,6 @@ public class ExcelUtility {
 
     /**
      * Sets data to Excel cell.
-     *
-     * @param rowNum Row number
-     * @param colNum Column number
-     * @param data Data to write
      */
     public void setCellData(int rowNum, int colNum, String data) {
         try {
@@ -85,8 +67,6 @@ public class ExcelUtility {
 
     /**
      * Gets total row count.
-     *
-     * @return Row count
      */
     public int getRowCount() {
         return sheet.getLastRowNum() + 1;
@@ -94,9 +74,6 @@ public class ExcelUtility {
 
     /**
      * Gets column count for a specific row.
-     *
-     * @param rowNum Row number
-     * @return Column count
      */
     public int getColumnCount(int rowNum) {
         return sheet.getRow(rowNum).getLastCellNum();

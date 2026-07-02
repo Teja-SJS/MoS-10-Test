@@ -8,12 +8,6 @@ import java.util.Properties;
  * ConfigReader class reads configuration properties from the config.properties file.
  * All configuration values are centralized here for easy management.
  *
- * Features:
- * - Centralized configuration management
- * - Properties file support
- * - Default value handling
- * - Thread-safe implementation
- *
  * @author Senior Automation Architect
  * @version 1.0
  */

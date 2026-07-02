@@ -6,13 +6,6 @@ import java.util.UUID;
 
 /**
  * RandomDataGenerator class provides methods to generate random test data.
- * Useful for data-driven testing.
- *
- * Features:
- * - Generate random strings
- * - Generate random numbers
- * - Generate random email
- * - Generate UUID
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -24,9 +17,6 @@ public class RandomDataGenerator {
 
     /**
      * Generates random string of specified length.
-     *
-     * @param length Length of the string
-     * @return Random string
      */
     public static String generateRandomString(int length) {
         StringBuilder sb = new StringBuilder();
@@ -39,10 +29,6 @@ public class RandomDataGenerator {
 
     /**
      * Generates random integer within range.
-     *
-     * @param min Minimum value
-     * @param max Maximum value
-     * @return Random integer
      */
     public static int generateRandomNumber(int min, int max) {
         int randomNum = random.nextInt((max - min) + 1) + min;
@@ -52,8 +38,6 @@ public class RandomDataGenerator {
 
     /**
      * Generates random email address.
-     *
-     * @return Random email
      */
     public static String generateRandomEmail() {
         String email = generateRandomString(10) + "@testmail.com";
@@ -63,8 +47,6 @@ public class RandomDataGenerator {
 
     /**
      * Generates UUID.
-     *
-     * @return UUID string
      */
     public static String generateUUID() {
         String uuid = UUID.randomUUID().toString();

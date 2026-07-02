@@ -8,12 +8,6 @@ import org.openqa.selenium.WebElement;
 /**
  * FrameUtility class provides methods to handle frames and iframes.
  *
- * Features:
- * - Switch to frame by index
- * - Switch to frame by name/id
- * - Switch to frame by element
- * - Switch back to default content
- *
  * @author Senior Automation Architect
  * @version 1.0
  */
@@ -23,8 +17,6 @@ public class FrameUtility {
 
     /**
      * Constructor to initialize FrameUtility with WebDriver.
-     *
-     * @param driver WebDriver instance
      */
     public FrameUtility(WebDriver driver) {
         this.driver = driver;
@@ -32,8 +24,6 @@ public class FrameUtility {
 
     /**
      * Switches to frame by index.
-     *
-     * @param frameIndex Index of the frame
      */
     public void switchToFrameByIndex(int frameIndex) {
         try {
@@ -47,8 +37,6 @@ public class FrameUtility {
 
     /**
      * Switches to frame by name or id.
-     *
-     * @param nameOrId Name or ID attribute of the frame
      */
     public void switchToFrameByNameOrId(String nameOrId) {
         try {
@@ -62,8 +50,6 @@ public class FrameUtility {
 
     /**
      * Switches to frame by locator.
-     *
-     * @param locator By locator of the frame element
      */
     public void switchToFrameByLocator(By locator) {
         try {

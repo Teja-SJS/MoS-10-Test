@@ -6,14 +6,6 @@ import java.sql.*;
 
 /**
  * DatabaseUtility class provides JDBC operations for MySQL database.
- * Handles database connectivity and query execution.
- *
- * Features:
- * - Database connection management
- * - Execute SELECT queries
- * - Execute INSERT/UPDATE/DELETE queries
- * - ResultSet processing
- * - Connection closing
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -52,9 +44,6 @@ public class DatabaseUtility {
 
     /**
      * Executes SELECT query.
-     *
-     * @param query SQL SELECT query
-     * @return ResultSet with query results
      */
     public ResultSet executeSelectQuery(String query) {
         try {
@@ -73,9 +62,6 @@ public class DatabaseUtility {
 
     /**
      * Executes UPDATE query.
-     *
-     * @param query SQL UPDATE query
-     * @return Number of rows affected
      */
     public int executeUpdateQuery(String query) {
         try {
@@ -89,44 +75,6 @@ public class DatabaseUtility {
         } catch (SQLException e) {
             LoggerManager.error("Failed to execute UPDATE query: " + e.getMessage(), e);
             throw new RuntimeException("Query execution failed", e);
-        }
-    }
-
-    /**
-     * Executes INSERT query.
-     *
-     * @param query SQL INSERT query
-     * @return Number of rows affected
-     */
-    public int executeInsertQuery(String query) {
-        return executeUpdateQuery(query);
-    }
-
-    /**
-     * Executes DELETE query.
-     *
-     * @param query SQL DELETE query
-     * @return Number of rows affected
-     */
-    public int executeDeleteQuery(String query) {
-        return executeUpdateQuery(query);
-    }
-
-    /**
-     * Gets column value from ResultSet.
-     *
-     * @param resultSet ResultSet object
-     * @param columnName Column name
-     * @return Column value as String
-     */
-    public String getColumnValue(ResultSet resultSet, String columnName) {
-        try {
-            String value = resultSet.getString(columnName);
-            LoggerManager.debug("Column value retrieved: " + columnName + " = " + value);
-            return value;
-        } catch (SQLException e) {
-            LoggerManager.error("Failed to get column value: " + e.getMessage(), e);
-            return null;
         }
     }
 

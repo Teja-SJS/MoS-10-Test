@@ -12,12 +12,6 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * ScreenshotUtility class provides functionality to capture screenshots.
- * Screenshots are saved with timestamp to prevent overwriting.
- *
- * Features:
- * - Capture screenshots with timestamp
- * - Save to configurable directory
- * - Base64 encoding for HTML reports
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -29,8 +23,6 @@ public class ScreenshotUtility {
 
     /**
      * Constructor to initialize ScreenshotUtility with WebDriver.
-     *
-     * @param driver WebDriver instance
      */
     public ScreenshotUtility(WebDriver driver) {
         this.driver = driver;
@@ -39,9 +31,6 @@ public class ScreenshotUtility {
 
     /**
      * Captures screenshot and saves to file system.
-     *
-     * @param testName Name of the test
-     * @return Path to the screenshot file
      */
     public String captureScreenshot(String testName) {
         try {
@@ -59,8 +48,6 @@ public class ScreenshotUtility {
 
     /**
      * Captures screenshot as Base64 string.
-     *
-     * @return Base64 encoded screenshot
      */
     public String captureScreenshotAsBase64() {
         try {
@@ -75,9 +62,6 @@ public class ScreenshotUtility {
 
     /**
      * Generates unique screenshot filename with timestamp.
-     *
-     * @param testName Name of the test
-     * @return Unique filename
      */
     private String generateScreenshotFileName(String testName) {
         LocalDateTime dateTime = LocalDateTime.now();

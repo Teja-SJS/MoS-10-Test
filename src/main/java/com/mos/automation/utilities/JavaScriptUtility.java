@@ -7,14 +7,6 @@ import org.openqa.selenium.WebElement;
 
 /**
  * JavaScriptUtility class provides methods to execute JavaScript on the webpage.
- * Useful for handling dynamic elements and executing custom scripts.
- *
- * Features:
- * - Execute JavaScript code
- * - Scroll to element
- * - Scroll to position
- * - Set element value directly
- * - Click element using JavaScript
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -26,8 +18,6 @@ public class JavaScriptUtility {
 
     /**
      * Constructor to initialize JavaScriptUtility with WebDriver.
-     *
-     * @param driver WebDriver instance
      */
     public JavaScriptUtility(WebDriver driver) {
         this.driver = driver;
@@ -36,9 +26,6 @@ public class JavaScriptUtility {
 
     /**
      * Executes JavaScript code.
-     *
-     * @param script JavaScript code to execute
-     * @return Result of JavaScript execution
      */
     public Object executeScript(String script) {
         try {
@@ -53,8 +40,6 @@ public class JavaScriptUtility {
 
     /**
      * Scrolls to a specific element on the page.
-     *
-     * @param element WebElement to scroll to
      */
     public void scrollToElement(WebElement element) {
         try {
@@ -68,9 +53,6 @@ public class JavaScriptUtility {
 
     /**
      * Scrolls to a specific position on the page.
-     *
-     * @param x X-coordinate
-     * @param y Y-coordinate
      */
     public void scrollToPosition(int x, int y) {
         try {
@@ -84,8 +66,6 @@ public class JavaScriptUtility {
 
     /**
      * Clicks an element using JavaScript.
-     *
-     * @param element WebElement to click
      */
     public void clickElementUsingJS(WebElement element) {
         try {
@@ -99,9 +79,6 @@ public class JavaScriptUtility {
 
     /**
      * Sets value to an input element using JavaScript.
-     *
-     * @param element WebElement to set value
-     * @param value Value to set
      */
     public void setElementValue(WebElement element, String value) {
         try {

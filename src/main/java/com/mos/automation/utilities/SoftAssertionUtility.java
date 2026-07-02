@@ -5,13 +5,6 @@ import org.testng.asserts.SoftAssert;
 
 /**
  * SoftAssertionUtility class provides soft assertion capabilities.
- * Soft assertions allow test execution to continue even after assertion failures.
- * All failures are reported at the end.
- *
- * Features:
- * - Soft assertions for test validation
- * - Assertion failure reporting
- * - Multiple assertions in single test
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -30,9 +23,6 @@ public class SoftAssertionUtility {
 
     /**
      * Asserts that condition is true (soft assertion).
-     *
-     * @param condition Condition to verify
-     * @param message Message on failure
      */
     public void assertTrue(boolean condition, String message) {
         try {
@@ -49,9 +39,6 @@ public class SoftAssertionUtility {
 
     /**
      * Asserts that condition is false (soft assertion).
-     *
-     * @param condition Condition to verify
-     * @param message Message on failure
      */
     public void assertFalse(boolean condition, String message) {
         try {
@@ -68,10 +55,6 @@ public class SoftAssertionUtility {
 
     /**
      * Asserts that two objects are equal (soft assertion).
-     *
-     * @param actual Actual value
-     * @param expected Expected value
-     * @param message Message on failure
      */
     public void assertEquals(Object actual, Object expected, String message) {
         try {
@@ -83,41 +66,7 @@ public class SoftAssertionUtility {
     }
 
     /**
-     * Asserts that two objects are not equal (soft assertion).
-     *
-     * @param actual Actual value
-     * @param expected Expected value
-     * @param message Message on failure
-     */
-    public void assertNotEquals(Object actual, Object expected, String message) {
-        try {
-            softAssert.assertNotEquals(actual, expected, message);
-            LoggerManager.info("Soft assertion - assertNotEquals: " + message);
-        } catch (Exception e) {
-            LoggerManager.error("Error in soft assertion: " + e.getMessage(), e);
-        }
-    }
-
-    /**
-     * Asserts that object is null (soft assertion).
-     *
-     * @param object Object to check
-     * @param message Message on failure
-     */
-    public void assertNull(Object object, String message) {
-        try {
-            softAssert.assertNull(object, message);
-            LoggerManager.info("Soft assertion - assertNull: " + message);
-        } catch (Exception e) {
-            LoggerManager.error("Error in soft assertion: " + e.getMessage(), e);
-        }
-    }
-
-    /**
      * Asserts that object is not null (soft assertion).
-     *
-     * @param object Object to check
-     * @param message Message on failure
      */
     public void assertNotNull(Object object, String message) {
         try {
@@ -130,7 +79,6 @@ public class SoftAssertionUtility {
 
     /**
      * Asserts all accumulated assertions.
-     * Call this at the end of test to verify all soft assertions.
      */
     public void assertAll() {
         try {

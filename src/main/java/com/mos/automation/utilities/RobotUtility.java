@@ -6,13 +6,6 @@ import java.awt.event.KeyEvent;
 
 /**
  * RobotUtility class provides keyboard and mouse simulation capabilities.
- * Useful for system-level interactions that Selenium cannot handle directly.
- *
- * Features:
- * - Keyboard key press
- * - Mouse movement
- * - Mouse click
- * - Type text using keyboard
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -36,8 +29,6 @@ public class RobotUtility {
 
     /**
      * Presses a key.
-     *
-     * @param keyCode KeyEvent code for the key
      */
     public void pressKey(int keyCode) {
         try {
@@ -50,8 +41,6 @@ public class RobotUtility {
 
     /**
      * Releases a key.
-     *
-     * @param keyCode KeyEvent code for the key
      */
     public void releaseKey(int keyCode) {
         try {
@@ -59,56 +48,6 @@ public class RobotUtility {
             LoggerManager.debug("Key released: " + keyCode);
         } catch (Exception e) {
             LoggerManager.error("Failed to release key: " + e.getMessage(), e);
-        }
-    }
-
-    /**
-     * Types text using keyboard simulation.
-     *
-     * @param text Text to type
-     */
-    public void typeText(String text) {
-        try {
-            for (char c : text.toCharArray()) {
-                int keyCode = KeyEvent.getExtendedKeyCodeForChar(c);
-                if (keyCode != KeyEvent.VK_UNDEFINED) {
-                    robot.keyPress(keyCode);
-                    robot.keyRelease(keyCode);
-                }
-            }
-            LoggerManager.info("Text typed: " + text);
-        } catch (Exception e) {
-            LoggerManager.error("Failed to type text: " + e.getMessage(), e);
-        }
-    }
-
-    /**
-     * Moves mouse to specific coordinates.
-     *
-     * @param x X coordinate
-     * @param y Y coordinate
-     */
-    public void moveMouse(int x, int y) {
-        try {
-            robot.mouseMove(x, y);
-            LoggerManager.debug("Mouse moved to: (" + x + ", " + y + ")");
-        } catch (Exception e) {
-            LoggerManager.error("Failed to move mouse: " + e.getMessage(), e);
-        }
-    }
-
-    /**
-     * Clicks mouse button.
-     *
-     * @param button Button to click (1 = left, 2 = middle, 3 = right)
-     */
-    public void clickMouse(int button) {
-        try {
-            robot.mousePress(button);
-            robot.mouseRelease(button);
-            LoggerManager.debug("Mouse clicked: " + button);
-        } catch (Exception e) {
-            LoggerManager.error("Failed to click mouse: " + e.getMessage(), e);
         }
     }
 

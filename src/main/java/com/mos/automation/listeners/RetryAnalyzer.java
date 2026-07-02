@@ -6,12 +6,6 @@ import org.testng.ITestResult;
 
 /**
  * RetryAnalyzer class implements TestNG IRetryAnalyzer interface.
- * Provides capability to retry failed tests automatically.
- *
- * Features:
- * - Automatic test retry on failure
- * - Configurable retry count
- * - Logging of retry attempts
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -23,9 +17,6 @@ public class RetryAnalyzer implements IRetryAnalyzer {
 
     /**
      * Determines if test should be retried.
-     *
-     * @param result ITestResult containing test details
-     * @return true if test should be retried, false otherwise
      */
     @Override
     public boolean retry(ITestResult result) {

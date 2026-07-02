@@ -12,13 +12,6 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * ExtentReportManager class manages Extent Reports functionality.
- * Creates HTML reports for test execution with screenshots.
- *
- * Features:
- * - Initialize reports
- * - Create test cases
- * - Capture screenshots
- * - Generate HTML report
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -52,9 +45,6 @@ public class ExtentReportManager {
 
     /**
      * Creates a test case in the report.
-     *
-     * @param testName Name of the test
-     * @param description Description of the test
      */
     public static void createTest(String testName, String description) {
         try {
@@ -71,8 +61,6 @@ public class ExtentReportManager {
 
     /**
      * Logs pass status to report.
-     *
-     * @param message Message to log
      */
     public static void logPass(String message) {
         try {
@@ -87,8 +75,6 @@ public class ExtentReportManager {
 
     /**
      * Logs fail status to report.
-     *
-     * @param message Message to log
      */
     public static void logFail(String message) {
         try {
@@ -103,9 +89,6 @@ public class ExtentReportManager {
 
     /**
      * Captures screenshot and attaches to report.
-     *
-     * @param driver WebDriver instance
-     * @param screenshotName Name of the screenshot
      */
     public static void captureScreenshot(WebDriver driver, String screenshotName) {
         try {
@@ -138,8 +121,6 @@ public class ExtentReportManager {
 
     /**
      * Generates unique timestamp for report file.
-     *
-     * @return Timestamp string
      */
     private static String generateReportTimestamp() {
         LocalDateTime dateTime = LocalDateTime.now();

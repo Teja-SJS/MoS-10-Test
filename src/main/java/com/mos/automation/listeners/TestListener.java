@@ -7,14 +7,6 @@ import org.testng.ITestResult;
 
 /**
  * TestListener class implements TestNG ITestListener interface.
- * Provides test lifecycle event handling and reporting.
- *
- * Features:
- * - Test start logging
- * - Test success handling
- * - Test failure handling
- * - Test skip handling
- * - Test finish handling
  *
  * @author Senior Automation Architect
  * @version 1.0
@@ -23,8 +15,6 @@ public class TestListener implements ITestListener {
 
     /**
      * Called when test starts.
-     *
-     * @param result ITestResult containing test details
      */
     @Override
     public void onTestStart(ITestResult result) {
@@ -34,8 +24,6 @@ public class TestListener implements ITestListener {
 
     /**
      * Called when test succeeds.
-     *
-     * @param result ITestResult containing test details
      */
     @Override
     public void onTestSuccess(ITestResult result) {
@@ -45,8 +33,6 @@ public class TestListener implements ITestListener {
 
     /**
      * Called when test fails.
-     *
-     * @param result ITestResult containing test details
      */
     @Override
     public void onTestFailure(ITestResult result) {
@@ -57,21 +43,9 @@ public class TestListener implements ITestListener {
 
     /**
      * Called when test is skipped.
-     *
-     * @param result ITestResult containing test details
      */
     @Override
     public void onTestSkipped(ITestResult result) {
         LoggerManager.warn("===== Test Skipped: " + result.getName() + " =====");
-    }
-
-    /**
-     * Called when test finishes (after success, failure, or skip).
-     *
-     * @param result ITestResult containing test details
-     */
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        LoggerManager.warn("Test failed but within success percentage: " + result.getName());
     }
 }
